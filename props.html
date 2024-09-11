@@ -1,0 +1,25 @@
+<html></html>
+    <head>
+        <title>props Sample</title>
+    </head>
+    <body>
+        <div id="app">
+            <child-component :propsdata="message"></child-component>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+        <script>
+
+            Vue.component('child-component', {
+                props: ['propsdata'],
+                template: '<p>{{ propsdata }}</p>'
+            });
+
+            new Vue({
+                el: '#app',
+                data: {
+                    message: '여기는 메세지'
+                }
+            });
+        </script>
+    </body>
+</html>
